@@ -1,0 +1,19 @@
+# git
+alias tiga='tig --all'
+
+# docker / docker-compose
+alias dca='docker-compose down && docker-compose build && docker-compose up'
+alias dcb='docker-compose build'
+alias dcd='docker-compose down'
+alias dcu='docker-compose up'
+
+# System / Miscellaneous
+alias mem='free -ht'
+alias myip='curl https://api.ipify.org; echo'
+alias now='date +"%F %T %Z"'
+alias path='echo -e ${PATH//:/\\n}'
+alias ports='netstat -tulanp'
+alias reboot='shutdown -r'
+alias update='sudo apt update'
+alias upgrade='sudo apt upgrade'
+

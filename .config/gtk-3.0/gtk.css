@@ -1,0 +1,9 @@
+VteTerminal,
+TerminalScreen {
+    padding: 32px;
+    -VteTerminal-inner-border: 32;
+}
+
+decoration, window, window.background {
+    border-radius: 32px;
+}
