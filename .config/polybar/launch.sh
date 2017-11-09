@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Configure computer-specific environment variables
+# Sourced from file in the polybar directory whose name
+# is the machine's hostname (see examples)
+source "$(dirname $0)/$(hostname -f).sh"
+
 # Terminate existing instances of polybar
 killall -q polybar
 
