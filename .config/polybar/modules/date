@@ -1,0 +1,9 @@
+[module/date]
+type = internal/date
+interval = 1
+
+date = %a %b %d
+time = %r
+
+format =  <label>
+label =  %date%   %time%

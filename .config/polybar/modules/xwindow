@@ -1,0 +1,7 @@
+[module/xwindow]
+type = internal/xwindow
+
+format-padding = 0
+
+label =  %title%
+label-maxlen = 25
