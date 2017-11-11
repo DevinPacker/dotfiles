@@ -1,22 +1,22 @@
 [colors]
-background = ${xrdb:XTerm.background:#282C34}
-foreground = ${xrdb:XTerm.foreground:#ABB2BF}
-color0 = ${xrdb:color0}
-color1 = ${xrdb:color1}
-color2 = ${xrdb:color2}
-color3 = ${xrdb:color3}
-color4 = ${xrdb:color4}
-color5 = ${xrdb:color5}
-color6 = ${xrdb:color6}
-color7 = ${xrdb:color7}
-color8 = ${xrdb:color8}
-color9 = ${xrdb:color9}
-color10 = ${xrdb:color10}
-color11 = ${xrdb:color11}
-color12 = ${xrdb:color12}
-color13 = ${xrdb:color13}
-color14 = ${xrdb:color14}
-color15 = ${xrdb:color15}
+background = ${xrdb:XTerm.background:#000000}
+foreground = ${xrdb:XTerm.foreground:#FFFFFF}
+color0 = ${xrdb:color0:#000000}
+color1 = ${xrdb:color1:#800000}
+color2 = ${xrdb:color2:#008000}
+color3 = ${xrdb:color3:#808000}
+color4 = ${xrdb:color4:#000080}
+color5 = ${xrdb:color5:#800080}
+color6 = ${xrdb:color6:#008080}
+color7 = ${xrdb:color7:#c0c0c0}
+color8 = ${xrdb:color8:#808080}
+color9 = ${xrdb:color9:#FF0000}
+color10 = ${xrdb:color10:#00FF00}
+color11 = ${xrdb:color11:#FFFF00}
+color12 = ${xrdb:color12:#0000FF}
+color13 = ${xrdb:color13:#FF00FF}
+color14 = ${xrdb:color14:#00FFFF}
+color15 = ${xrdb:color15:#FFFFFF}
 
 [global/wm]
 margin-top = 0
