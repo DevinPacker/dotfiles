@@ -1,0 +1,24 @@
+[network/base]
+type = internal/network
+interval = 3.0
+accumulate-stats = false
+
+[module/wired-network]
+inherit = network/base
+interface = ${env:WIRED_INTERFACE:eth0}
+
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+
+label-connected =   %downspeed%  %upspeed%
+label-disconnected = 
+
+[module/wireless-network]
+inherit = network/base
+interface = ${env:WIRELESS_INTERFACE:wlan0}
+
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+
+label-connected =  %essid%  %downspeed%  %upspeed%  %signal%%
+label-disconnected = 
