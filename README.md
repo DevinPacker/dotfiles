@@ -23,6 +23,10 @@ sudo apt-get install polybar
 
 Most icons are from either [Material Design Icons](https://materialdesignicons.com/) or [Font Awesome](http://fontawesome.io/). Download the fonts and place it in your _.fonts_ folder and update the font cache using `fc-cache -fv`.
 
+## termite
+
+To install on Ubuntu, it is recommended to use Corwind's install script located [here](https://github.com/Corwind/termite-install/blob/master/termite-install.sh). A copy is included here for convenience (but may not be up-to-date).
+
 ## zsh
 
 ### Framework
