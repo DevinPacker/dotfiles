@@ -74,6 +74,11 @@ if [ -f ~/.env ]; then
   source ~/.env
 fi
 
+# Import colorscheme from 'wal'
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+(wal -r &)
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
