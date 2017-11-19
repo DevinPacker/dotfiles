@@ -16,4 +16,6 @@ bspc config gapless_monocle true
 bspc config split_ratio 0 .50
 
 sxhkd &
+compton &
+~/.config/polybar/launch.sh &
 
