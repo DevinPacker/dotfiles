@@ -19,5 +19,7 @@ bspc config split_ratio 0 .50
 
 sxhkd &
 compton &
-~/.config/polybar/launch.sh &
+
+wal -tR
+~/.config/polybar/launch.sh
 

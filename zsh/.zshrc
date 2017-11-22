@@ -77,7 +77,7 @@ fi
 # Import colorscheme from 'wal'
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
-(wal -r &)
+(wal -tr &)
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
