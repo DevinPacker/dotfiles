@@ -29,10 +29,10 @@ wm-restack = bspwm
 font-0 = "Roboto Mono:size=10:weight=medium;2"
 font-1 = "Material Design Icons:size=12:weight=regular;2"
 
-width = 100%
+width = 1888
 height = 36
-offset-x = 0%
-offset-y = 0
+offset-x = 16
+offset-y = 16
 padding = 1
 
 background = ${colors.background}
