@@ -43,9 +43,9 @@ module-margin = 1
 tray-position = right
 tray-padding = 0
 
-modules-left = bspwm xwindow
+modules-left = bspwm
 modules-center =
-modules-right = cpu memory date battery wired-network wireless-network volume user powermenu
+modules-right = battery wired-network wireless-network volume date user powermenu
 
 include-file = $HOME/.config/polybar/modules/battery
 include-file = $HOME/.config/polybar/modules/bspwm
@@ -57,4 +57,3 @@ include-file = $HOME/.config/polybar/modules/powermenu
 include-file = $HOME/.config/polybar/modules/user
 include-file = $HOME/.config/polybar/modules/volume
 include-file = $HOME/.config/polybar/modules/xwindow
-

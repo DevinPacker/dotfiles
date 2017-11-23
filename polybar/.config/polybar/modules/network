@@ -10,7 +10,7 @@ interface = ${env:WIRED_INTERFACE:eth0}
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
 
-label-connected =   %downspeed%  %upspeed%
+label-connected = 
 label-disconnected = 
 
 [module/wireless-network]
@@ -20,5 +20,5 @@ interface = ${env:WIRELESS_INTERFACE:wlan0}
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
 
-label-connected =  %essid%  %downspeed%  %upspeed%  %signal%%
+label-connected =  %essid%
 label-disconnected = 
