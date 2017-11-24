@@ -29,7 +29,7 @@ wm-restack = bspwm
 font-0 = "Roboto Mono:size=10:weight=medium;2"
 font-1 = "Material Design Icons:size=12:weight=regular;2"
 
-width = 1888
+width = ${env:BAR_WIDTH}
 height = 36
 offset-x = 16
 offset-y = 16
