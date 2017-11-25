@@ -10,6 +10,10 @@ super + Return
 super + @space
 	rofi -combi-modi window,drun -show combi
 
+# lockscreen
+super + l
+  i3lock -ef -i <(import -window root - | convert -scale 10% -scale 1000% - png:-)
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
