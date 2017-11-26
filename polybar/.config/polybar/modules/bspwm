@@ -2,20 +2,31 @@
 type = internal/bspwm
 pin-workspaces = true
 
-label-focused = %index%
+ws-icon-0 = I;
+ws-icon-1 = II;
+ws-icon-2 = III;
+ws-icon-3 = IV;
+ws-icon-4 = V;
+ws-icon-5 = VI;
+ws-icon-6 = VII;
+ws-icon-7 = VIII;
+ws-icon-8 = IX;
+ws-icon-9 = X;
+
+label-focused = %icon%
 label-focused-background = ${colors.color3}
 label-focused-foreground = ${colors.background}
-label-focused-underline= ${colors.color3}
 label-focused-padding = 2
+label-focused-font = 3
 
-label-occupied = %index%
+label-occupied = %icon%
 label-occupied-foreground = ${colors.color15}
 label-occupied-padding = 2
 
-label-urgent = %index%!
+label-urgent = %icon%!
 label-urgent-foreground = ${colors.color9}
 label-urgent-padding = 2
 
-label-empty = %index%
+label-empty = %icon%
 label-empty-foreground = ${colors.color7}
 label-empty-padding = 2
