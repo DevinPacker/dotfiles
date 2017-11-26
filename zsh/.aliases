@@ -17,3 +17,7 @@ alias reboot='shutdown -r'
 alias update='sudo apt update'
 alias upgrade='sudo apt upgrade'
 
+function theme {
+  wal -tf .cache/wal/colorschemes/$1.json
+}
+
