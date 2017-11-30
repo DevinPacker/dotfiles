@@ -18,6 +18,6 @@ alias update='sudo apt update'
 alias upgrade='sudo apt upgrade'
 
 function theme {
-  wal -tf .cache/wal/colorschemes/$1.json
+  wal -tf ~/.cache/wal/colorschemes/$1.json
 }
 
