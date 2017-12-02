@@ -35,14 +35,12 @@ height = 36
 offset-x = 16
 offset-y = 16
 padding-right = 1
+radius = 5
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
 module-margin = 1
-
-tray-position = right
-tray-padding = 0
 
 modules-left = bspwm
 modules-center =
