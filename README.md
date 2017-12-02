@@ -75,9 +75,10 @@ sudo apt-get update
 sudo apt-get install polybar
 ```
 
-#### Icons
+#### Icons Used
 
-Most icons are from either [Material Design Icons](https://materialdesignicons.com/) or [Font Awesome](http://fontawesome.io/). Download the fonts and place it in your _.fonts_ folder and update the font cache using `fc-cache -fv`.
+* [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) - Includes FontAwesome, DevIcons, Octicons, Powerline icons, etc.
+* [Material Design Icons](https://github.com/Templarian/MaterialDesign) - For a few extra icons not included in Nerd Fonts
 
 ## termite
 

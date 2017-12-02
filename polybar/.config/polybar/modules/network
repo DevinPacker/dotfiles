@@ -8,17 +8,27 @@ inherit = network/base
 interface = ${env:WIRED_INTERFACE:eth0}
 
 format-connected = <label-connected>
-format-disconnected = <label-disconnected>
+format-connected-prefix = " "
+format-connected-prefix-font = 4
 
-label-connected = 
-label-disconnected = 
+format-disconnected = <label-disconnected>
+format-disconnected-prefix = " "
+format-disconnected-prefix-font = 4
+
+label-connected =
+label-disconnected =
 
 [module/wireless-network]
 inherit = network/base
 interface = ${env:WIRELESS_INTERFACE:wlan0}
 
 format-connected = <label-connected>
-format-disconnected = <label-disconnected>
+format-connected-prefix = " "
+format-connected-prefix-font = 4
 
-label-connected =  %essid%
-label-disconnected = 
+format-disconnected = <label-disconnected>
+format-disconnected-prefix = " "
+format-disconnected-prefix-font = 4
+
+label-connected = %essid%
+label-disconnected =

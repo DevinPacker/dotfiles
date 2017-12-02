@@ -5,5 +5,6 @@ interval = 1
 date = %a %b %d
 time = %r
 
-format =  <label>
-label =  %date%   %time%
+format = <label>
+label =  %{T1}%date%%{T-}   %{T1}%time%%{T-}
+label-font = 2

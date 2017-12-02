@@ -3,7 +3,10 @@ type = internal/memory
 interval = 3
 
 format = <label>
-label =  %gb_used% (%percentage_used%%)
+format-prefix = " "
+format-prefix-font = 2
+
+label = %gb_used% (%percentage_used%%)
 
 bar-used-indicator =
 bar-used-width = 50

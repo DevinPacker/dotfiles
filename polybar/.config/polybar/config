@@ -27,14 +27,15 @@ monitor=${env:MONITOR}
 wm-restack = bspwm
 
 font-0 = "Roboto Mono:size=10:antialias=true:weight=medium;2"
-font-1 = "Material Design Icons:size=12:antialias=false:weight=regular;2"
-font-2 = "Material Design Icons:size=18:antialias=false:weight=regular;4"
+font-1 = "RobotoMono Nerd Font:size=11:antialias=false:weight=regular;2"
+font-2 = "RobotoMono Nerd Font:size=18:antialias=false:weight=regular;4"
+font-3 = "Material Design Icons:size=12:antialias=false:weight=regular;2"
 
 width = ${env:BAR_WIDTH}
 height = 36
 offset-x = 16
 offset-y = 16
-padding-right = 1
+padding-right = 2
 radius = 5
 
 background = ${colors.background}

@@ -3,7 +3,10 @@ type = internal/cpu
 interval = 2
 
 format = <label>
-label =  %percentage%%
+format-prefix = " "
+format-prefix-font = 2
+
+label = %percentage%%
 
 ramp-coreload-0 = ▁
 ramp-coreload-1 = ▂
