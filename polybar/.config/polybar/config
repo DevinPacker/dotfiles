@@ -45,9 +45,10 @@ module-margin = 1
 
 modules-left = bspwm
 modules-center =
-modules-right = battery wired-network wireless-network volume date user powermenu
+modules-right = battery wired-network wireless-network brightness volume date user powermenu
 
 include-file = $HOME/.config/polybar/modules/battery
+include-file = $HOME/.config/polybar/modules/brightness
 include-file = $HOME/.config/polybar/modules/bspwm
 include-file = $HOME/.config/polybar/modules/cpu
 include-file = $HOME/.config/polybar/modules/date
