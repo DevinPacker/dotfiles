@@ -1,5 +1,5 @@
 [options]
-font = Monospace 9
+font = FantasqueSansMono Nerd Font 10
 
 allow_bold = true
 clickable_url = true
