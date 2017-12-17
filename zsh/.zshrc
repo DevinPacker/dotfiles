@@ -56,6 +56,13 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+# Path Modifications
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+if type rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+fi
+
 # Further tweak theme if necessary
 if [ $ZSH_THEME ] && [ -f $ZSH_CUSTOM/themes/$ZSH_THEME.custom ]; then
   source $ZSH_CUSTOM/themes/$ZSH_THEME.custom

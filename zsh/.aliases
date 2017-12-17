@@ -17,6 +17,12 @@ alias reboot='shutdown -r'
 alias update='sudo apt update'
 alias upgrade='sudo apt upgrade'
 
+# Use colorls if available
+if type colorls > /dev/null; then
+  alias lc='colorls --sd'
+  alias lca='colorls -lA --sd'
+fi
+
 function theme {
   wal -tf ~/.cache/wal/colorschemes/$1.json
 }
