@@ -1,0 +1,61 @@
+"*":
+  "atom-clock":
+    dateFormat: " YYYY-MM-DD | hh:mm A"
+    showClockIcon: true
+  "atom-material-ui":
+    colors:
+      abaseColor: "#5c6bc0"
+      accentColor: "#dbc85a"
+      genAccent: true
+      paintCursor: true
+      predefinedColor: "Indigo"
+    tabs:
+      compactTabs: true
+      noTabMinWidth: true
+      tintedTabBar: true
+    ui: {}
+  core:
+    autoHideMenuBar: true
+    telemetryConsent: "no"
+    themes: [
+      "atom-material-ui"
+      "atom-snazzy-clear-syntax"
+    ]
+  editor:
+    showInvisibles: true
+  "exception-reporting":
+    userId: "c9feb51a-0df6-4750-81cb-26d0f8659cdc"
+  fonts:
+    fontFamily: "Fantasque Sans Mono"
+  "git-blame":
+    ignoreWhiteSpaceDiffs: true
+  "linter-ui-default":
+    panelHeight: 262
+  minimap:
+    plugins:
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+      linter: true
+      linterDecorationsZIndex: 0
+  "spell-check":
+    grammars: [
+      "source.asciidoc"
+      "source.gfm"
+      "text.git-commit"
+      "text.plain"
+      "text.plain.null-grammar"
+      "text.md"
+    ]
+    locales: [
+      "en-US"
+    ]
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    scrollSyncType: "Vertical + Horizontal"
+  "tree-view":
+    hideVcsIgnoredFiles: false
+  welcome:
+    showOnStartup: false
