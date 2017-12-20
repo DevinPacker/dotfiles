@@ -7,6 +7,3 @@ cursor_blink = system
 cursor_shape = block
 scrollbar = off
 
-[colors]
-background = rgba(63, 63, 63, 0.85)
-
