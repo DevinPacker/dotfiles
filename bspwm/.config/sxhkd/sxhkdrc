@@ -93,8 +93,16 @@ super + ctrl + {x,y,z}
 #
 
 # focus the node in the given direction
-super + {_,ctrl + }{Left,Down,Up,Right}
-	bspc node -{f,s} {west,south,north,east}
+super + {Left,Down,Up,Right}
+	bspc node -f {west,south,north,east}
+
+# swap nodes in the given direction
+super + ctrl +  {Left,Down,Up,Right}
+	bspc node -s {west,south,north,east}
+
+# send node to next desktop
+ctrl + alt + shift + {Left, Right}
+	bspc node -d {prev, next}.local
 
 # focus the node for the given path jump
 super + {p,b,comma,period}
@@ -105,7 +113,7 @@ super + {_,shift + }c
 	bspc node -f {next,prev}.local
 
 # focus the next/previous desktop in the current monitor
-super + bracket{left,right}
+ctrl + alt + {Left, Right}
 	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
@@ -141,19 +149,3 @@ super + shift + space
 # cancel the preselection for the focused desktop
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
-
-#
-# move/resize
-#
-
-# expand a window by moving one of its side outward
-super + alt + {Left,Down,Up,Right}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-
-# contract a window by moving one of its side inward
-super + alt + shift + {Left,Down,Up,Right}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
-
-# move a floating window
-super + f + {Left,Down,Up,Right}
-	bspc node -v {-20 0,0 20,0 -20,20 0}
