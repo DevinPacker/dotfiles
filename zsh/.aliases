@@ -24,6 +24,5 @@ if type colorls > /dev/null; then
 fi
 
 function theme {
-  wal -tf ~/.cache/wal/colorschemes/$1.json
+  wal -tf ~/.cache/wal/colorschemes/$1.json -o wal-bspc-update.sh
 }
-

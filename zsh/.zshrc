@@ -57,7 +57,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 # Path Modifications
-export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/scripts:$HOME/.rbenv/bin:$PATH"
 
 if type rbenv > /dev/null; then
   eval "$(rbenv init -)"
@@ -84,7 +84,7 @@ fi
 # Import colorscheme from 'wal'
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
-(wal -tr &)
+(wal -tr -o wal-bspc-update.sh &)
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -112,4 +112,3 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
