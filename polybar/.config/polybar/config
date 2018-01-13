@@ -33,7 +33,7 @@ font-3 = "Material Design Icons:size=12:antialias=false:weight=regular;1"
 
 width = ${env:SCREEN_WIDTH}
 height = 36
-padding-left = 2
+padding-left = 3
 padding-right = 2
 
 background = ${colors.background}
@@ -44,7 +44,7 @@ line-color = ${colors.foreground}
 
 module-margin = 1
 
-modules-left = bspwm
+modules-left = icon bspwm
 modules-center =
 modules-right = battery wired-network wireless-network brightness volume date user powermenu
 
@@ -53,6 +53,7 @@ include-file = $HOME/.config/polybar/modules/brightness
 include-file = $HOME/.config/polybar/modules/bspwm
 include-file = $HOME/.config/polybar/modules/cpu
 include-file = $HOME/.config/polybar/modules/date
+include-file = $HOME/.config/polybar/modules/icon
 include-file = $HOME/.config/polybar/modules/memory
 include-file = $HOME/.config/polybar/modules/network
 include-file = $HOME/.config/polybar/modules/powermenu

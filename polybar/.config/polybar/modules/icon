@@ -1,0 +1,4 @@
+[module/icon]
+type = custom/text
+content = %{T3}%{T-}
+content-foreground = ${colors.color2}
