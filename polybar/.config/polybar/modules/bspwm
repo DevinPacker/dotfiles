@@ -14,10 +14,9 @@ ws-icon-8 = IX;
 ws-icon-9 = X;
 
 label-focused = %icon%
-label-focused-background = ${colors.color3}
-label-focused-foreground = ${colors.background}
 label-focused-padding = 2
 label-focused-font = 3
+label-focused-underline = ${colors.color3}
 
 label-occupied = %icon%
 label-occupied-foreground = ${colors.color15}
@@ -30,6 +29,6 @@ label-urgent-padding = 2
 label-urgent-font = 2
 
 label-empty = %icon%
-label-empty-foreground = ${colors.color7}
+label-empty-foreground = ${colors.color8}
 label-empty-padding = 2
 label-empty-font = 2

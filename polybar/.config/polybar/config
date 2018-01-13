@@ -26,20 +26,21 @@ margin-bottom = 0
 monitor=${env:MONITOR}
 wm-restack = bspwm
 
-font-0 = "RobotoMono Nerd Font:size=10:antialias=true:weight=medium;2"
-font-1 = "RobotoMono Nerd Font:size=11:antialias=false:weight=regular;2"
-font-2 = "RobotoMono Nerd Font:size=18:antialias=false:weight=regular;4"
-font-3 = "Material Design Icons:size=12:antialias=false:weight=regular;2"
+font-0 = "RobotoMono Nerd Font:size=10:antialias=true:weight=medium;1"
+font-1 = "RobotoMono Nerd Font:size=11:antialias=false:weight=regular;1"
+font-2 = "RobotoMono Nerd Font:size=18:antialias=false:weight=regular;3"
+font-3 = "Material Design Icons:size=12:antialias=false:weight=regular;1"
 
-width = ${env:BAR_WIDTH}
+width = ${env:SCREEN_WIDTH}
 height = 36
-offset-x = 16
-offset-y = 16
+padding-left = 2
 padding-right = 2
-radius = 5
 
 background = ${colors.background}
 foreground = ${colors.foreground}
+
+line-size = 2
+line-color = ${colors.foreground}
 
 module-margin = 1
 
