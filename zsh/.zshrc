@@ -84,7 +84,9 @@ fi
 # Import colorscheme from 'wal'
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
-(wal -tr -o wal-bspc-update.sh &)
+if type wal > /dev/null; then
+  (wal -tr -o wal-update.sh &)
+fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

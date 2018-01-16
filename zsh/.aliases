@@ -24,5 +24,11 @@ if type colorls > /dev/null; then
 fi
 
 function theme {
-  wal -tf ~/.cache/wal/colorschemes/$1.json -o wal-bspc-update.sh
+  if [ -f ~/.cache/wal/colorschemes/$1.json ]; then
+    wal -tf ~/.cache/wal/colorschemes/$1.json -o wal-update.sh
+  elif [ -f $1 ]; then
+    wal -ti $1 -o wal-update.sh
+  else
+    echo "No color scheme or image file that matches argument."
+  fi
 }
