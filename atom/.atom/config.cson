@@ -37,6 +37,28 @@
       "highlight-selectedDecorationsZIndex": 0
       linter: true
       linterDecorationsZIndex: 0
+  "platformio-ide-terminal":
+    ansiColors:
+      normal:
+        blue: "#61aeee"
+        cyan: "#56b6c2"
+        green: "#98c379"
+        magenta: "#c678dd"
+        red: "#e06c75"
+        yellow: "#d19a66"
+      zBright:
+        brightBlack: "#5c6370"
+        brightBlue: "#62afee"
+        brightCyan: "#56b6c2"
+        brightGreen: "#98c379"
+        brightMagenta: "#c678dd"
+        brightRed: "#e06c75"
+        brightYellow: "#d19a66"
+    style:
+      fontFamily: "FantasqueSansMono Nerd Font Mono"
+      fontSize: "14"
+      theme: "one-dark"
+    toggles: {}
   "spell-check":
     grammars: [
       "source.asciidoc"
