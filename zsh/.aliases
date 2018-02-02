@@ -23,6 +23,12 @@ if type colorls > /dev/null; then
   alias lca='colorls -lA --sd'
 fi
 
+function themes {
+  for item in $(ls $HOME/.cache/wal/colorschemes); do
+    echo ${item%.*}
+  done
+}
+
 function theme {
   if [ -f ~/.cache/wal/colorschemes/$1.json ]; then
     wal -tf ~/.cache/wal/colorschemes/$1.json -o wal-update.sh

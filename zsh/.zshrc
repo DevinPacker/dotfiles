@@ -63,11 +63,6 @@ if type rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
 
-# Further tweak theme if necessary
-if [ $ZSH_THEME ] && [ -f $ZSH_CUSTOM/themes/$ZSH_THEME.custom ]; then
-  source $ZSH_CUSTOM/themes/$ZSH_THEME.custom
-fi
-
 # Source VTE if using Tilix as terminal emulator
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
