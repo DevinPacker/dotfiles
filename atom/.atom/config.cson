@@ -16,6 +16,9 @@
     ui: {}
   core:
     autoHideMenuBar: true
+    disabledPackages: [
+      "linter"
+    ]
     telemetryConsent: "no"
     themes: [
       "atom-material-ui"
@@ -58,7 +61,8 @@
       fontFamily: "FantasqueSansMono Nerd Font Mono"
       fontSize: "14"
       theme: "one-dark"
-    toggles: {}
+    toggles:
+      autoClose: true
   "spell-check":
     grammars: [
       "source.asciidoc"
