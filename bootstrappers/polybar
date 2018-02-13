@@ -1,0 +1,36 @@
+#! /usr/bin/env sh
+# Builds and installs polybar
+
+sudo apt-get -y update \
+  && sudo apt-get -y install \
+    cmake \
+    cmake-data \
+    git \
+    i3-wm \
+    libasound2-dev \
+    libcairo2-dev \
+    libcurl4-openssl-dev \
+    libiw-dev \
+    libmpdclient-dev \
+    libpulse-dev \
+    libxcb-cursor-dev \
+    libxcb-ewmh-dev \
+    libxcb-icccm4-dev \
+    libxcb-image0-dev \
+    libxcb-randr0-dev \
+    libxcb-util0-dev \
+    libxcb-xkb-dev \
+    libxcb-xrm-dev \
+    libxcb1-dev \
+    pkg-config \
+    python-xcbgen \
+    xcb-proto
+
+git clone --recursive https://github.com/jaagr/polybar polybar-repo
+cd polybar-repo
+git checkout 3.1.0
+mkdir build
+cd build
+cmake ..
+sudo make install \
+  && cd ../.. && rm -rf polybar-repo
