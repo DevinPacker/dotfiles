@@ -1,3 +1,0 @@
-# Ignore additional colorscheme files produced by wal
-wal/.cache/wal/colors*
-wal/.cache/wal/sequences
