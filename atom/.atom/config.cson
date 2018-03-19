@@ -2,10 +2,11 @@
   "atom-clock":
     dateFormat: " YYYY-MM-DD | hh:mm A"
     showClockIcon: true
+  "atom-ide-ui":
+    use: {}
   "atom-material-ui":
     colors:
       abaseColor: "#5c6bc0"
-      accentColor: "#dbc85a"
       genAccent: true
       paintCursor: true
       predefinedColor: "Indigo"
@@ -25,6 +26,7 @@
       "atom-snazzy-clear-syntax"
     ]
   editor:
+    fontSize: 16
     showInvisibles: true
   "exception-reporting":
     userId: "c9feb51a-0df6-4750-81cb-26d0f8659cdc"
@@ -32,6 +34,8 @@
     fontFamily: "Fantasque Sans Mono"
   "git-blame":
     ignoreWhiteSpaceDiffs: true
+  "linter-eslint":
+    useGlobalEslint: true
   "linter-ui-default":
     panelHeight: 262
   minimap:
