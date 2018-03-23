@@ -33,7 +33,7 @@ font-3 = "Material Design Icons:size=12:antialias=false:weight=regular;1"
 
 width = ${env:SCREEN_WIDTH}
 height = 36
-padding-left = 3
+padding-left = 0
 padding-right = 2
 
 background = ${colors.background}

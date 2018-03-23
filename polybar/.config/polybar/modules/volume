@@ -23,6 +23,7 @@ label-volume = %percentage%%
 
 label-muted = 
 label-muted-font = 2
+label-muted-foreground = ${colors.color4}
 
 ramp-volume-font = 2
 ramp-volume-0 = 
