@@ -1,0 +1,206 @@
+#! /usr/bin/env python
+import argparse
+import json
+import logging
+import os
+import requests
+import subprocess
+import sys
+from random import randint
+
+
+api_key = os.getenv('UNSPLASH_CLIENT_ID')
+LOG_FMT = "%(asctime)s - %(levelname)s - %(message)s"
+logging.basicConfig(level=logging.WARNING, format=LOG_FMT, stream=sys.stdout)
+logger = logging.getLogger()
+
+
+class Walsplash(object):
+    def __init__(self, args):
+        if args['verbose']:
+            logger.setLevel(logging.DEBUG)
+        self.config = args
+        if api_key is None:
+            raise KeyError('UNSPLASH_CLIENT_ID '
+                           + 'environment variable is not set.')
+        self.headers = {'Authorization': 'Client-ID ' + api_key}
+        self.meta_file_path = os.path.join(self.config['location'],
+                                           '.walsplash')
+        if os.path.exists(self.meta_file_path):
+            self.open_meta_file()
+
+    def new(self):
+        self.active_image = self.fetch_random()
+        self.save_image()
+        self.apply_image(os.path.join(self.config['location'],
+                         self.active_image['id']))
+        self.display_image_info()
+        self.save_meta_file()
+
+    def cycle(self):
+        if (not os.path.exists(self.config['location'])
+           or os.path.isfile(self.config['location'])):
+            raise ValueError('No wallpapers found. '
+                             + 'Fetch some new wallpapers first.')
+        files = os.listdir(self.config['location'])
+        if '.walsplash' in files:
+            files.remove('.walsplash')
+        idx = randint(0, len(files) - 1)
+        img_id = files[idx]
+        self.active_image = self.fetch_metadata(img_id)
+        self.apply_image(os.path.join(self.config['location'],
+                         self.active_image['id']))
+        self.display_image_info()
+        self.save_meta_file()
+
+    def check_location(self):
+        if not os.path.exists(self.config['location']):
+            if os.path.isfile(self.config['location']):
+                raise argparse.ArgumentError('Location is a file: %s'
+                                             % self.config['location'])
+            logger.debug('Save location does not exist.')
+            logger.debug('Creating %s' % self.config['location'])
+            os.makedirs(self.config['location'])
+
+    def fetch_metadata(self, id):
+        response = requests.get('https://api.unsplash.com/photos/' + id,
+                                headers=self.headers)
+        response.raise_for_status()
+        return response.json()
+
+    def fetch_random(self):
+        params = {
+            'orientation': self.config['orientation'],
+            'query': self.config['query'],
+            'featured': self.config['featured'],
+        }
+        logger.debug('Fetching image metadata...')
+        response = requests.get('https://api.unsplash.com/photos/random',
+                                headers=self.headers, params=params)
+        response.raise_for_status()
+        metadata = response.json()
+        logger.debug('Fetched metadata for image %s' % metadata['id'])
+        return metadata
+
+    def save_image(self):
+        self.check_location()
+        filename = os.path.join(self.config['location'],
+                                self.active_image['id'])
+        response = requests.get(self.active_image['urls'][self.config['size']],
+                                stream=True,
+                                headers=self.headers)
+        logger.debug('Saving image to %s...' % filename)
+        with open(filename, 'wb') as fd:
+            for chunk in response.iter_content(chunk_size=128):
+                fd.write(chunk)
+        filesize = os.path.getsize(filename)
+        logger.debug('Wrote %d bytes (%.2fMB)',
+                     filesize, filesize / (1024 * 1024.0))
+
+    def apply_image(self, image_location):
+        wal_args = ['wal', '-i', image_location, '-o', 'wal-update.sh']
+        if not self.config['verbose']:
+            wal_args.append('-q')
+        subprocess.call(wal_args)
+
+    def display_image_info(self):
+        o = self.active_image
+        info = (
+          'Image ID: %s\n' % o['id'],
+          'Artist: %s (%s)\n' % (o['user']['name'], o['user']['username']),
+          'Location: %s, %s\n' % (o['location']['city'],
+                                  o['location']['country'])
+          if 'location' in o else '',
+          'Views: %d\n' % o['views'],
+          'Downloads: %d\n' % o['downloads'],
+          'Likes: %d\n' % o['likes'],
+          '\nLinks\n',
+          'Image: %s\n' % o['links']['html'],
+          'Artist: %s\n' % o['user']['links']['html'],
+          'Unsplash: https://unsplash.com',
+        )
+        print(''.join(info))
+
+    def save_meta_file(self):
+        self.check_location()
+        with open(self.meta_file_path, 'wb') as meta_file:
+            json.dump(self.active_image, meta_file)
+
+    def open_meta_file(self):
+        if not os.path.exists(self.meta_file_path):
+            raise ValueError('Apply a wallpaper with Walsplash first.')
+        with open(self.meta_file_path, 'rb') as meta_file:
+            self.active_image = json.load(meta_file)
+
+
+def image_size(value):
+    sizes = ['raw', 'full', 'regular', 'small', 'thumb']
+    if value.lower() not in sizes:
+        raise argparse.ArgumentError('Image size must be one of %s.'
+                                     % ', '.join(sizes))
+    return value.lower()
+
+
+def image_orientation(value):
+    orientations = ['landscape', 'portrait', 'squarish']
+    if value.lower() not in orientations:
+        raise argparse.ArgumentError('Image orientation must be one of %s.'
+                                     % ', '.join(orientations))
+    return value.lower()
+
+
+def walsplash_actions(value):
+    actions = ['new', 'info', 'cycle']
+    if value.lower() not in actions:
+        raise argparse.ArgumentError('Unsplash action must be one of %s.'
+                                     % ', '.join(actions))
+    return value.lower()
+
+
+def bool_input(value):
+    return value.lower() in ['true', '1', 't', 'y', 'yes']
+
+
+def parser():
+    parser = argparse.ArgumentParser(description='Fetch and apply Unsplash photos with Pywal.')
+    parser.add_argument('action',
+                        nargs='?',
+                        default='cycle',
+                        help='Action to be perform (Default: cycle)',
+                        type=walsplash_actions)
+    parser.add_argument('-l', '--location',
+                        default=os.path.join('/home', os.getenv('USER'), '.wallpapers'),
+                        help='Location where wallpapers will be saved (Default: ~/.wallpapers)')
+    parser.add_argument('-q', '--query',
+                        help='Filter images by subject (Ex. animal, ocean, landscape, etc.')
+    parser.add_argument('-f', '--featured',
+                        default=True,
+                        help='Select featured photos only (Default: True)',
+                        type=bool_input)
+    parser.add_argument('-s', '--size',
+                        default='full',
+                        help='Image size to be retrieved (Default: full)',
+                        type=image_size)
+    parser.add_argument('-o', '--orientation',
+                        default='landscape',
+                        help='Filter image by aspect ratios (Default: landscape)',
+                        type=image_orientation)
+    parser.add_argument('-v', '--verbose', action='store_true',
+                        help='Log additional info to console (Default: false)')
+    return parser
+
+
+if __name__ == '__main__':
+    parser = parser()
+    args = vars(parser.parse_args(sys.argv[1:]))
+    instance = Walsplash(args)
+    action = args['action']
+    if action == 'cycle':
+        instance.cycle()
+    elif action == 'new':
+        instance.new()
+    elif action == 'info':
+        instance.display_image_info()
+    else:
+        raise argparse.ArgumentError('Unknown Walsplash command %s'
+                                     % args.command)
