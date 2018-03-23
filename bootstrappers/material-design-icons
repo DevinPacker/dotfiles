@@ -1,0 +1,14 @@
+#! /usr/bin/env sh
+
+directory="$HOME/.local/share/fonts/MaterialDesign-Webfont"
+
+if [ -d $directory ]; then
+  curdir=$(pwd)
+  cd $directory
+  git pull
+  cd $curdir
+else
+  git clone --depth 1 https://github.com/Templarian/MaterialDesign-Webfont.git "$HOME/.local/share/fonts/MaterialDesign-Webfont"
+fi
+  
+fc-cache -vf

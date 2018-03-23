@@ -1,0 +1,6 @@
+#! /usr/bin/env sh
+
+git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git nerd-fonts-repo
+chmod +x nerd-fonts-repo/install.sh
+./nerd-fonts-repo/install.sh
+rm -rf nerd-fonts-repo
