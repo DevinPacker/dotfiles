@@ -24,7 +24,6 @@ sxhkd &
 compton &
 redshift &
 
-wal -tR -o "$HOME/scripts/wal-update.sh"
+wal -R -o wal-update
 ~/.config/polybar/launch.sh
 dropbox start
-

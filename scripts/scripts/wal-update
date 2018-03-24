@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 if command -V bspc > /dev/null; then
   . "$HOME/.cache/wal/colors.sh"
   bspc config normal_border_color $background

@@ -65,7 +65,7 @@ fi
 
 # Source VTE if using Tilix as terminal emulator
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
+  source /etc/profile.d/vte.sh
 fi
 
 if [ -f ~/.aliases ]; then
@@ -76,11 +76,9 @@ if [ -f ~/.env ]; then
   source ~/.env
 fi
 
-# Import colorscheme from 'wal'
-# &   # Run the process in the background.
-# ( ) # Hide shell job control messages.
+# Import colorscheme from wal
 if type wal > /dev/null; then
-  (wal -tr -o wal-update.sh &)
+  cat "$HOME/.cache/wal/sequences"
 fi
 
 # export MANPATH="/usr/local/man:$MANPATH"

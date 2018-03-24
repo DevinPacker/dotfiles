@@ -31,9 +31,9 @@ function themes {
 
 function theme {
   if [ -f ~/.cache/wal/colorschemes/$1.json ]; then
-    wal -tf ~/.cache/wal/colorschemes/$1.json -o wal-update.sh
+    wal -f ~/.cache/wal/colorschemes/$1.json -o wal-update
   elif [ -f $1 ]; then
-    wal -ti $1 -o wal-update.sh
+    wal -i $1 -o wal-update
   else
     echo "No color scheme or image file that matches argument."
   fi

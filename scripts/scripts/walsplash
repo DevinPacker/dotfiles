@@ -98,7 +98,7 @@ class Walsplash(object):
                      filesize, filesize / (1024 * 1024.0))
 
     def apply_image(self, image_location):
-        wal_args = ['wal', '-i', image_location, '-o', 'wal-update.sh']
+        wal_args = ['wal', '-i', image_location, '-o', 'wal-update']
         if not self.config['verbose']:
             wal_args.append('-q')
         subprocess.call(wal_args)
