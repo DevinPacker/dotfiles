@@ -29,7 +29,6 @@ wm-restack = bspwm
 font-0 = "RobotoMono Nerd Font:size=10:antialias=true:weight=medium;1"
 font-1 = "RobotoMono Nerd Font:size=11:antialias=false:weight=regular;1"
 font-2 = "RobotoMono Nerd Font:size=18:antialias=false:weight=regular;3"
-font-3 = "Material Design Icons:size=12:antialias=false:weight=regular;1"
 
 width = ${env:SCREEN_WIDTH}
 height = 36
