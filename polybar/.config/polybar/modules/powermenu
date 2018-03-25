@@ -1,7 +1,7 @@
 [module/powermenu]
 type = custom/menu
 
-label-open = 
+label-open = %{T2}%{T-}
 label-open-foreground = ${colors.color1}
 label-open-padding = 1
 
