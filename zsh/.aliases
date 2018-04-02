@@ -23,18 +23,6 @@ if type colorls > /dev/null; then
   alias lca='colorls -lA --sd'
 fi
 
-function themes {
-  for item in $(ls $HOME/.cache/wal/colorschemes); do
-    echo ${item%.*}
-  done
-}
-
-function theme {
-  if [ -f ~/.cache/wal/colorschemes/$1.json ]; then
-    wal -f ~/.cache/wal/colorschemes/$1.json -o wal-update
-  elif [ -f $1 ]; then
-    wal -i $1 -o wal-update
-  else
-    echo "No color scheme or image file that matches argument."
-  fi
-}
+# Theming
+alias theme='wal -f'
+alias walsplash='walsplash --backend colorz'

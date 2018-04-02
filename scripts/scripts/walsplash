@@ -37,7 +37,7 @@ class Walsplash(object):
         self.display_image_info()
         self.save_meta_file()
 
-    def cycle(self):
+    def shuffle(self):
         if (not os.path.exists(self.config['location'])
            or os.path.isfile(self.config['location'])):
             raise ValueError('No wallpapers found. '
@@ -98,7 +98,8 @@ class Walsplash(object):
                      filesize, filesize / (1024 * 1024.0))
 
     def apply_image(self, image_location):
-        wal_args = ['wal', '-i', image_location, '-o', 'wal-update']
+        wal_args = ['wal', '--backend', self.config['backend'],
+                    '-i', image_location, '-o', 'wal-update']
         if not self.config['verbose']:
             wal_args.append('-q')
         subprocess.call(wal_args)
@@ -150,7 +151,7 @@ def image_orientation(value):
 
 
 def walsplash_actions(value):
-    actions = ['new', 'info', 'cycle']
+    actions = ['new', 'info', 'shuffle']
     if value.lower() not in actions:
         raise argparse.ArgumentError('Unsplash action must be one of %s.'
                                      % ', '.join(actions))
@@ -165,8 +166,8 @@ def parser():
     parser = argparse.ArgumentParser(description='Fetch and apply Unsplash photos with Pywal.')
     parser.add_argument('action',
                         nargs='?',
-                        default='cycle',
-                        help='Action to be perform (Default: cycle)',
+                        default='shuffle',
+                        help='Action to be perform (Default: shuffle)',
                         type=walsplash_actions)
     parser.add_argument('-l', '--location',
                         default=os.path.join('/home', os.getenv('USER'), '.wallpapers'),
@@ -187,6 +188,8 @@ def parser():
                         type=image_orientation)
     parser.add_argument('-v', '--verbose', action='store_true',
                         help='Log additional info to console (Default: false)')
+    parser.add_argument('--backend', default='wal',
+                        help='Pywal backend to use when generating colorschemes.')
     return parser
 
 
@@ -195,8 +198,8 @@ if __name__ == '__main__':
     args = vars(parser.parse_args(sys.argv[1:]))
     instance = Walsplash(args)
     action = args['action']
-    if action == 'cycle':
-        instance.cycle()
+    if action == 'shuffle':
+        instance.shuffle()
     elif action == 'new':
         instance.new()
     elif action == 'info':

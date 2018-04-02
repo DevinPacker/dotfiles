@@ -24,6 +24,12 @@ sxhkd &
 compton &
 redshift &
 
+# Apply last-known wallpaper. Fallback incase last colorscheme (wal -R) did not
+# have a wallpaper associated with it.
+if [ -f "$HOME/.cache/wal/wal" ]; then
+  feh --bg-fill $(cat "$HOME/.cache/wal/wal")
+fi
+
 wal -R -o wal-update
 ~/.config/polybar/launch.sh
 dropbox start

@@ -78,7 +78,7 @@ fi
 
 # Import colorscheme from wal
 if type wal > /dev/null; then
-  cat "$HOME/.cache/wal/sequences"
+  (cat "$HOME/.cache/wal/sequences" &)
 fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
