@@ -30,6 +30,6 @@ if [ -f "$HOME/.cache/wal/wal" ]; then
   feh --bg-fill $(cat "$HOME/.cache/wal/wal")
 fi
 
-wal -R -o wal-update
+wal -R -o "$HOME/scripts/wal-update"
 ~/.config/polybar/launch.sh
 dropbox start
