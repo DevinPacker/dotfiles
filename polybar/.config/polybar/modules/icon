@@ -1,6 +1,4 @@
 [module/icon]
 type = custom/text
 content = %{T3}%{T-}
-content-foreground = ${colors.background}
-content-background = ${colors.color2}
-content-padding = 2
+content-foreground = ${colors.color2}

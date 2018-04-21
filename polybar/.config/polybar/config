@@ -32,7 +32,7 @@ font-2 = "RobotoMono Nerd Font:size=18:antialias=false:weight=regular;3"
 
 width = ${env:SCREEN_WIDTH}
 height = 36
-padding-left = 0
+padding-left = 3
 padding-right = 2
 
 background = ${colors.background}
