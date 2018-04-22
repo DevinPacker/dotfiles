@@ -32,14 +32,6 @@ XF86AudioMute
 super + Escape
 	pkill -USR1 -x sxhkd
 
-# launch chrome
-super + h
-	google-chrome
-
-# launch nautilus
-super + n
-	nautilus --no-desktop
-
 #
 # bspwm hotkeys
 #
@@ -55,14 +47,6 @@ super + {_,shift + }w
 # alternate between the tiled and monocle layout
 super + m
 	bspc desktop -l next
-
-# if the current node is automatic, send it to the last manual, otherwise pull the last leaf
-super + y
-	bspc query -N -n focused.automatic && bspc node -n last.!automatic || bspc node last.leaf -n focused
-
-# swap the current node and the biggest node
-super + g
-	bspc node -s biggest
 
 # rotate current node
 super + r
@@ -103,10 +87,6 @@ super + ctrl +  {Left,Down,Up,Right}
 # send node to next desktop
 ctrl + alt + shift + {Left, Right}
 	bspc node -d {prev, next}.local
-
-# focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous node in the current desktop
 super + {_,shift + }c
