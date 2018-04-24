@@ -12,7 +12,11 @@ When you stow (install) a package, the software tries to add the tree structure 
 
 When you unstow (uninstall) a package, the software will remove the the symlinks, effectively removing the dotfiles from your home folder.
 
-### Installing Packages
+### Usage
+
+By default the target directory will be the parent of the stow directory. This can be changed via the `-t` flag as shown in the examples below, allowing you to clone the dotfiles repository wherever convenient.
+
+#### Installing Packages
 
 ```sh
 # Make sure stow is installed.
@@ -28,7 +32,7 @@ cd dotfiles
 stow <package-name> -t ~
 ```
 
-### Uninstalling Packages
+#### Uninstalling Packages
 
 ```sh
 # Navigate to the repository.
@@ -40,7 +44,7 @@ cd dotfiles
 stow -d <package-name> -t ~
 ```
 
-### Dry-Run Operations
+#### Dry-Run Operations
 
 If you are worried about what stow will do to your file system, you can test operations by using a combination of the _simulate_ and _verbosity_ flags.
 
@@ -52,57 +56,24 @@ stow <package-name> -t ~ --simulate -v
 stow -d <package-name> -t ~ --simulate -v
 ```
 
-# Packages
+# Additional Resources
 
-## Polybar
+*   [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)
 
-### Install (Debian)
+    Patched fonts that include an assortment of icon packs (FontAwesome, DevIcons, Octicons, Powerline icons, Material Design Icons, etc.)
 
-> Note: I ran into trouble with the _include-file_ option in my polybar config when using the version hosted in the repository below. I compiled version 3.0.5 from source and the _include-file_ option now works. Instructions for compiling can be found [here](https://github.com/jaagr/polybar/wiki/Compiling) on polybar's Github wiki.
->
-> If compiling from source on <= Ubuntu 16.04 you will need to install the __libxcb-xrm-dev__ package from a ppa.
->
-> ```sh
-> sudo add-apt-repository ppa:aguignard/ppa
-> sudo apt-get update
-> sudo apt-get install libxcb-xrm-dev
-> ```
 
-```sh
-wget -q -O - http://archive.getdeb.net/getdeb-archive.key | sudo apt-key add -
-sudo sh -c 'echo "deb http://archive.getdeb.net/ubuntu $(lsb_release -cs)-getdeb apps" >> /etc/apt/sources.list.d/getdeb.list'
-sudo apt-get update
-sudo apt-get install polybar
-```
+*   [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
-#### Icons Used
+    Popular framework for managing zsh configuration.
 
-* [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) - Includes FontAwesome, DevIcons, Octicons, Powerline icons, etc.
-* [Material Design Icons](https://github.com/Templarian/MaterialDesign) - For a few extra icons not included in Nerd Fonts
 
-## termite
+*   Zsh Plugins
 
-To install on Ubuntu, it is recommended to use Corwind's install script located [here](https://github.com/Corwind/termite-install/blob/master/termite-install.sh). A copy is included here for convenience (but may not be up-to-date).
+    *   [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+    *   [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
-## zsh
 
-### Framework
+*   Zsh Themes
 
-* [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
-
-### Plugins
-
-* [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-* [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-
-### Themes
-
-Some themes require [patched fonts](https://github.com/powerline/fonts) to display symbols correctly. These patched fonts do not overwrite existing fonts on the system and have "for Powerline" in their name.
-
-* [Spaceship](https://github.com/denysdovhan/spaceship-zsh-theme)
-
-### Additional Resources
-
-* [How to Install ZSH](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
-* [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
-* [Patched Powerline Fonts](https://github.com/powerline/fonts)
+    *   [Spaceship](https://github.com/denysdovhan/spaceship-zsh-theme)
