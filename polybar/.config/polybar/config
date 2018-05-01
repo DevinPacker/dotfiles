@@ -27,8 +27,8 @@ monitor=${env:MONITOR}
 wm-restack = bspwm
 
 font-0 = "RobotoMono Nerd Font:size=10:antialias=true:weight=Semibold;1"
-font-1 = "RobotoMono Nerd Font:size=11:antialias=false:weight=regular;1"
-font-2 = "RobotoMono Nerd Font:size=18:antialias=false:weight=regular;3"
+font-1 = "RobotoMono Nerd Font:size=11:antialias=true:weight=regular;1"
+font-2 = "RobotoMono Nerd Font:size=18:antialias=true:weight=regular;3"
 
 width = ${env:SCREEN_WIDTH}
 height = 36
