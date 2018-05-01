@@ -1,22 +1,4 @@
 #! /usr/bin/env bash
 
-apt -y update && apt -y install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    software-properties-common
-
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-apt-key fingerprint 0EBFCD88
-echo "Fingerprint can be verified on https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu"
-
-add-apt-repository -y \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
-
-apt -y update && apt install -y docker-ce
-
-groupadd docker
-usermod -aG docker "$(who | awk '{print $1}')"
-
+# Install docker using script hosted by the Docker team
+curl -sSL https://get.docker.com | sh

@@ -15,6 +15,11 @@
 # You should have received a copy of the GNU General Public License along
 # with this program. If not, see <http://www.gnu.org/licenses/>.
 
+if [ $(lsb_release -cs) != "xenial" ]; then
+  echo "Script is only confirmed to work for Ubuntu 16.04 LTS."
+  exit 1
+fi
+
 sudo apt-get install -y \
   git \
   g++ \

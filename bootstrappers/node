@@ -1,0 +1,5 @@
+#! /usr/bin/env bash
+
+# Install node.js, using script provided by nodesource
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install -y nodejs

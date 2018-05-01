@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	termite
+	gnome-terminal
 
 # program launcher
 super + @space

@@ -2,7 +2,7 @@
 
 if [ $# -eq 0 ]; then
   echo "Must specify version of docker-compose to install (e.g., 1.18.0)."
-  exit 0
+  exit 1
 fi
 
 curl -L "https://github.com/docker/compose/releases/download/$1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose

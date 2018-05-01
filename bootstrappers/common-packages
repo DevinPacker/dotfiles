@@ -1,0 +1,31 @@
+#! /usr/bin/env bash
+
+if [ "$EUID" -ne 0 ]; then
+  echo "Please run this script using sudo."
+  exit 1
+fi
+
+apt update
+apt -yf install git \
+  build-essential \
+  cmake \
+  compton \
+  curl \
+  feh \
+  git \
+  gtk-redshift \
+  htop \
+  i3lock \
+  keepassxc \
+  mupdf \
+  net-tools \
+  nodejs \
+  python-dev \
+  python-pip \
+  python3-dev \
+  python3-pip \
+  ranger \
+  stow \
+  tig \
+  vim \
+  zsh
