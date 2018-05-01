@@ -7,6 +7,9 @@ alias dcb='docker-compose build'
 alias dcd='docker-compose down'
 alias dcu='docker-compose up'
 
+# dropbox
+alias dst='dropbox status'
+
 # System / Miscellaneous
 alias mem='free -ht'
 alias myip='curl https://api.ipify.org; echo'
@@ -14,14 +17,24 @@ alias now='date +"%F %T %Z"'
 alias path='echo -e ${PATH//:/\\n}'
 alias ports='netstat -tulanp'
 alias reboot='shutdown -r'
+alias space='df -h'
 alias update='sudo apt update'
 alias upgrade='sudo apt upgrade'
+alias upgradable='apt list --upgradable'
+alias autoremove='sudo apt autoremove'
+
+# stow
+alias dotfile='stow -vt ~'
+alias simdotfile='stow --simulate -vt ~'
 
 # Use colorls if available
 if type colorls > /dev/null; then
   alias lc='colorls --sd'
   alias lca='colorls -lA --sd'
 fi
+
+# Application Defaults
+alias nautilus='nautilus --no-desktop'
 
 # Theming
 alias theme='wal -o wal-update -f'
