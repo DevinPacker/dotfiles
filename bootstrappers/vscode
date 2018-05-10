@@ -1,0 +1,5 @@
+#! /usr/bin/env sh
+
+wget -c https://go.microsoft.com/fwlink/?LinkID=760868 -O vscode.deb
+sudo dpkg -i vscode.deb
+rm vscode.deb
