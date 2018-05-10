@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 export WIRELESS_INTERFACE=wlxf07d6814d412
-export WIRED_INTERFACE=
-
+export WIRED_INTERFACE=enp7s0
