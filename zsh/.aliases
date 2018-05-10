@@ -37,5 +37,6 @@ fi
 alias nautilus='nautilus --no-desktop'
 
 # Theming
-alias theme='wal -o wal-update -f'
+alias dtheme='wal -o wal-update -f'
+alias ltheme='wal -o wal-update -l -f'
 alias walsplash='walsplash --backend colorz'
