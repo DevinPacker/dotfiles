@@ -16,6 +16,7 @@ apt -yf install git \
   gtk-redshift \
   htop \
   i3lock \
+  jq \
   keepassxc \
   mupdf \
   net-tools \

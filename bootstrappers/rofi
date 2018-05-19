@@ -1,17 +1,5 @@
 #! /usr/bin/env sh
-# Downloads and installs rofi package from ubuntu launchpad
-# Intended for use on Ubuntu 16.04 LTS. Adds a ppa to install
-# a dependency missing from the main Ubuntu package repositories.
 
 dl_link="https://launchpad.net/ubuntu/+archive/primary/+files/rofi_1.3.1-2_amd64.deb"
-
-echo "Adding ppa to install libxcb-xrm."
-echo "Package is missing from official Ubuntu 16.04 repositories."
-
-sudo add-apt-repository -y ppa:aguignard/ppa
-sudo apt-get -y update
-sudo apt-get -y install libxcb-xrm-dev
-
 wget -c -O rofi.deb $dl_link
-
 sudo dpkg -i rofi.deb && rm rofi.deb
