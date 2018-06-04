@@ -84,9 +84,9 @@ super + {Left,Down,Up,Right}
 super + ctrl +  {Left,Down,Up,Right}
 	bspc node -s {west,south,north,east}
 
-# send node to next desktop
+# send node to next desktop and focus
 ctrl + alt + shift + {Left, Right}
-	bspc node -d {prev, next}.local
+	id=$(bspc query -N -n); bspc node -d {prev, next}.local; bspc node -f ${id}
 
 # focus the next/previous node in the current desktop
 super + {_,shift + }c
