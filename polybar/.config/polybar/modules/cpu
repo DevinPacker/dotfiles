@@ -6,7 +6,7 @@ format = <label>
 format-prefix = " "
 format-prefix-font = 2
 
-label = %percentage%%
+label = %percentage:2%%
 
 ramp-coreload-0 = ▁
 ramp-coreload-1 = ▂

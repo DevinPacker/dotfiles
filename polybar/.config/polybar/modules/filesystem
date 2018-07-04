@@ -1,0 +1,12 @@
+[module/filesystem]
+type = internal/fs
+mount-0 = /
+interval = 15
+
+# If displaying multiple mount points, replace icon with mountpoint token.
+format-mounted = <label-mounted>
+label-mounted =  %used%/%total%
+
+format-unmounted = <label-unmounted>
+label-unmounted = %mountpoint%
+label-unmounted-foreground = ${colors.color1}
