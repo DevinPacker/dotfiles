@@ -3,7 +3,7 @@ type = custom/menu
 
 label-open = %{T2}%{T-}
 label-open-foreground = ${colors.color1}
-label-open-padding = 1
+label-open-padding = 0
 
 label-close =  Cancel
 label-close-foreground = ${colors.color1}

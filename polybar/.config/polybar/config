@@ -43,9 +43,15 @@ line-color = ${colors.foreground}
 
 module-margin = 1
 
+tray-position = right
+tray-padding = 0
+tray-detached = false
+tray-scale = 1
+tray-transparent = false
+
 modules-left = icon bspwm
 modules-center = cpu memory filesystem
-modules-right = battery wired-network wireless-network brightness volume date powermenu
+modules-right = battery brightness volume date powermenu
 
 include-file = $HOME/.config/polybar/modules/battery
 include-file = $HOME/.config/polybar/modules/brightness
