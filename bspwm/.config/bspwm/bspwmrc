@@ -15,6 +15,7 @@ bspc config presel_feedback_color '#6C7A89'
 bspc config remove_disabled_monitors true
 bspc config remove_unplugged_monitors true
 bspc config merge_overlapping_monitors true
+
 bspc config borderless_monocle true
 bspc config gapless_monocle false
 bspc config single_monocle true
@@ -26,6 +27,7 @@ xsetroot -cursor_name left_ptr
 sxhkd &
 compton &
 redshift &
+nm-applet &
 
 # Apply last-known wallpaper. Fallback incase last colorscheme (wal -R) did not
 # have a wallpaper associated with it.
