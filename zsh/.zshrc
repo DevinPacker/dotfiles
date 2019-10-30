@@ -55,9 +55,14 @@ plugins=(colored-man-pages git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-# Path Modifications
-export PATH="$HOME/scripts:$HOME/.rbenv/bin:$PATH"
+# Only allow unique entries in the PATH variable.
+# This avoids duplicate path entries in nested zsh sessions.
+typeset -U path
+path+=(
+  "${HOME}/.local/bin"
+  "${HOME}/scripts"
+  "${HOME}/.rbenv/bin"
+)
 
 if type rbenv > /dev/null; then
   eval "$(rbenv init -)"
