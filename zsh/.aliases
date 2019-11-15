@@ -1,42 +1,67 @@
-# git
-alias tiga='tig --all'
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. For a full list of active aliases, run `alias`.
 
-# docker / docker-compose
+alias autoremove='sudo apt autoremove'
+alias update='sudo apt update'
+alias upgradable='apt list --upgradable'
+alias upgrade='sudo apt upgrade'
+
+alias gimme='sudo chown -R $USER:$USER'
+
+alias c='clear'
+
+alias myip='curl https://api.ipify.org; echo'
+
+alias now='date +"%F %T %Z"'
+
+alias dps='docker ps'
+
 alias dca='docker-compose down && docker-compose build && docker-compose up'
-alias dcb='docker-compose build'
-alias dcd='docker-compose down'
-alias dcu='docker-compose up'
+alias dcr='docker-compose run --rm'
+alias dcs='docker-compose stop'
 
-# dropbox
+alias dotfile='stow -vt ~'
+
+alias space='df -h'
+
 alias dst='dropbox status'
 
-# System / Miscellaneous
-alias mem='free -ht'
-alias myip='curl https://api.ipify.org; echo'
-alias now='date +"%F %T %Z"'
-alias path='echo -e ${PATH//:/\\n}'
-alias ports='netstat -tulanp'
-alias reboot='shutdown -r'
-alias space='df -h'
-alias update='sudo apt update'
-alias upgrade='sudo apt upgrade'
-alias upgradable='apt list --upgradable'
-alias autoremove='sudo apt autoremove'
+alias sizeof='du -chs'
 
-# stow
-alias dotfile='stow -vt ~'
-alias simdotfile='stow --simulate -vt ~'
+alias path='echo -e ${PATH//:/\\n}'
+
+alias emptydirs='find . -type d -empty'
+alias findfile='find . -type f -name'
+
+alias meminfo='free -hlt'
+
+alias gdst='git diff --stat'
+alias git='noglob git'
+alias gpp='git pull --prune'
+
+alias hgrep='history | grep'
+
+alias cmount='mount | column -t'
+
+alias nautilus='nautilus --no-desktop'
+
+alias ports='netstat -tulanp'
+
+alias reboot='shutdown -r'
+
+alias tldr='tldr -t base16'
+
+alias walf='wal --vte -f'
+alias wallf='wal --vte -l -f'
+alias wali='wal --backend colorz --vte -o wal-update -i'
+
+alias wgdn='sudo wg-quick down wg0'
+alias wgup='sudo wg-quick up wg0'
+
+alias open='xdg-open &>/dev/null'
 
 # Use colorls if available
 if type colorls > /dev/null; then
   alias lc='colorls --sd'
   alias lca='colorls -lA --sd'
 fi
-
-# Application Defaults
-alias nautilus='nautilus --no-desktop'
-
-# Theming
-alias dtheme='wal -o wal-update -f'
-alias ltheme='wal -o wal-update -l -f'
-alias walsplash='walsplash --backend colorz'
