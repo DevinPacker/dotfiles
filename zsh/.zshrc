@@ -101,6 +101,10 @@ fi
 # https://www.gnupg.org/(it)/documentation/manuals/gnupg/Common-Problems.html
 export GPG_TTY=$(tty)
 
+# Load command-line fuzzy finder if present
+# https://github.com/junegunn/fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
