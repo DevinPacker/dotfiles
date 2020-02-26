@@ -97,6 +97,10 @@ if type wal > /dev/null; then
   (cat "$HOME/.cache/wal/sequences" &)
 fi
 
+# Ensure GPG_TTY is properly set for gpg-agent's Pinentry program
+# https://www.gnupg.org/(it)/documentation/manuals/gnupg/Common-Problems.html
+export GPG_TTY=$(tty)
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
