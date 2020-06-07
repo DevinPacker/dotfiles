@@ -93,7 +93,7 @@ if [ -f ~/.env ]; then
 fi
 
 # Import colorscheme from wal
-if type wal > /dev/null; then
+if type wal > /dev/null && [ -s $HOME/.cache/wal/sequences ]; then
   (cat "$HOME/.cache/wal/sequences" &)
 fi
 
