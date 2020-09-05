@@ -7,7 +7,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
+# ZSH_THEME="" (Disabled) Starship prompt is enabled below
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -70,10 +70,17 @@ source $ZSH/oh-my-zsh.sh
 # This avoids duplicate path entries in nested zsh sessions.
 typeset -U path
 path+=(
+  "${HOME}/.cargo/bin"
   "${HOME}/.local/bin"
-  "${HOME}/scripts"
   "${HOME}/.rbenv/bin"
+  "${HOME}/scripts"
 )
+
+# Starship prompt
+# https://github.com/starship/starship
+if type starship > /dev/null; then
+  eval "$(starship init zsh)"
+fi
 
 if type rbenv > /dev/null; then
   eval "$(rbenv init -)"
