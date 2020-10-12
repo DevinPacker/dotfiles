@@ -3,7 +3,6 @@ type = internal/memory
 interval = 3
 
 format = <label>
-format-prefix = " "
-format-prefix-font = 2
+format-prefix = "MEM: "
 
 label = %gb_used%

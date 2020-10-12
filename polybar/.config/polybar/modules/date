@@ -6,4 +6,4 @@ date = %a %b %d
 time = %r
 
 format = <label>
-label = %{T2}%{T-} %date%  %{T2}%{T-} %time%
+label = %date% %time%

@@ -3,8 +3,7 @@ type = internal/cpu
 interval = 2
 
 format = <label>
-format-prefix = " "
-format-prefix-font = 2
+format-prefix = "CPU: "
 
 label = %percentage:2%%
 
