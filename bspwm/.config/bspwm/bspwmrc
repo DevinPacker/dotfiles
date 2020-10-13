@@ -1,7 +1,7 @@
 #! /bin/sh
 
 for monitor in $(bspc query -M); do
-  bspc monitor $monitor -d I II III IV V VI VII VIII IX X
+  bspc monitor $monitor -d I II III IV V
 done
 
 # border_radius property only works when using @dylanaraps bspwm fork
@@ -31,6 +31,8 @@ sxhkd &
 compton &
 redshift &
 nm-applet &
+xscreensaver -nosplash &
+dropbox start &
 
 # Apply last-known wallpaper. Fallback incase last colorscheme (wal -R) did not
 # have a wallpaper associated with it.
@@ -40,4 +42,3 @@ fi
 
 wal -R -o "$HOME/scripts/wal-update"
 ~/.config/polybar/launch.sh
-dropbox start

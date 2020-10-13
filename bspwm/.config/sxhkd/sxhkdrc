@@ -12,7 +12,7 @@ super + @space
 
 # lockscreen
 super + l
-	i3lock -ef -i <(import -window root - | convert -scale 5% -scale 2000% - png:-)
+	xscreensaver-command -lock
 
 # brightness
 XF86MonBrightness{Up,Down}
@@ -58,7 +58,7 @@ super + {minus,equal}
 
 # Toggle Gaps
 super + {shift,_} + g
-	bspc config -d focused window_gap {0,64}
+	bspc config -d focused window_gap {0,32}
 
 #
 # state/flags
