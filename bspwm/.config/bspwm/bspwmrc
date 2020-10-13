@@ -4,7 +4,10 @@ for monitor in $(bspc query -M); do
   bspc monitor $monitor -d I II III IV V VI VII VIII IX X
 done
 
-bspc config border_width 4
+# border_radius property only works when using @dylanaraps bspwm fork
+# https://github.com/dylanaraps/bspwm
+bspc config border_radius 4
+bspc config border_width 2
 bspc config window_gap 0
 
 bspc config normal_border_color '#000000'
