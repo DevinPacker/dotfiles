@@ -82,9 +82,15 @@ if type starship > /dev/null; then
   eval "$(starship init zsh)"
 fi
 
+# Ruby version manager
+# https://github.com/rbenv/rbenv
 if type rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
+
+# Node version manager
+# https://github.com/nvm-sh/nvm
+[ -s "$HOME/.nvm/nvm.sh" ] && source "$HOME/.nvm/nvm.sh"
 
 # Source VTE if using Tilix as terminal emulator
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
