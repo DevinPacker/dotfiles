@@ -102,3 +102,8 @@ function extract {
     done
   fi
 }
+
+npmr() {
+    local script
+    script=$(jq -r '.scripts | to_entries[] | "\(.key) => \(.value)"' < package.json | sort | fzf | cut -d' ' -f1) && npm run "$script"
+}
