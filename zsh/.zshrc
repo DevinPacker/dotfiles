@@ -90,7 +90,7 @@ fi
 
 # Node version manager
 # https://github.com/nvm-sh/nvm
-[ -s "$HOME/.nvm/nvm.sh" ] && source "$HOME/.nvm/nvm.sh"
+[ -s "$HOME/.nvm/nvm.sh" ] && source "$HOME/.nvm/nvm.sh" --no-use
 
 # Source VTE if using Tilix as terminal emulator
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
