@@ -1,9 +1,0 @@
-[options]
-font = FantasqueSansMono Nerd Font 10
-
-allow_bold = true
-clickable_url = true
-cursor_blink = system
-cursor_shape = block
-scrollbar = off
-
