@@ -1,0 +1,59 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+    colors = true
+    interval = 5
+    output_format = "i3bar"
+}
+
+order += "load"
+order += "memory"
+order += "disk /"
+order += "battery 0"
+order += "volume master"
+order += "tztime"
+
+disk "/" {
+    format = "DISK %used"
+}
+
+load {
+    format = "LOAD %1min"
+}
+
+memory {
+    format = "MEMORY %used"
+    format_degraded = "MEMORY %free"
+    threshold_degraded = "10%"
+    threshold_critical = "5%"
+    memory_used_method = "classical"
+}
+
+tztime "" {
+    format = "%b-%d %H:%M:%S"
+}
+
+battery 0 {
+    format = "BATTERY %percentage %remaining %consumption"
+    format_down = ""
+    path = "/sys/class/power_supply/BAT%d/uevent"
+    low_threshold = 20
+    integer_battery_capacity = true
+
+    # Use battery design capacity. Depending on how worn the
+    # battery is, a full charge will be lower than 100%.
+    last_full_capacity = false
+}
+
+volume "master" {
+    format = "🔊 %volume"
+    format_muted = "🔇"
+    device = "default"
+    mixer = "Master"
+}
